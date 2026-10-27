@@ -1,0 +1,583 @@
+/* ==================== VARIÁVEIS DO TEMA F.A.R.O.L. ==================== */
+:root {
+    --cor-marinho: #0f172a;        /* Azul noturno profundo (Cabeçalho/Destaque) */
+    --cor-oceano: #1e3a8a;         /* Azul institucional */
+    --cor-primaria: #2563eb;       /* Azul interativo */
+    --cor-farol: #f59e0b;          /* Luz Âmbar do Farol */
+    --cor-farol-claro: #fef3c7;
+    --cor-resguardo: #0d9488;      /* Verde-água (Acolhimento e Calma) */
+    --cor-fundo: #f1f5f9;
+    --cor-branca: #ffffff;
+    --cor-texto: #1e293b;
+    --cor-texto-suave: #64748b;
+    --cor-borda: #cbd5e1;
+    --cor-perigo: #dc2626;         /* Sinal Vermelho (Severo) */
+    --cor-sucesso: #10b981;
+    --sombra: 0 4px 15px rgba(15, 23, 42, 0.08);
+    --raio-borda: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* ==================== CABEÇALHO E NAVEGAÇÃO ==================== */
+.navbar {
+    background-color: var(--cor-marinho);
+    color: var(--cor-branca);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-bottom: 3px solid var(--cor-farol);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo-badge {
+    background: rgba(245, 158, 11, 0.15);
+    border: 2px solid var(--cor-farol);
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: var(--cor-farol);
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 0.78rem;
+    color: #cbd5e1;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #e2e8f0;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.nav-btn.active {
+    background-color: var(--cor-farol);
+    color: var(--cor-marinho);
+    border-color: var(--cor-farol);
+}
+
+.badge-alerta {
+    background-color: var(--cor-perigo);
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-weight: 700;
+}
+
+/* ==================== CONTROLE DE TELAS ==================== */
+.main-content {
+    flex: 1;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.tela {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.tela.ativa {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================== TELA 1: INÍCIO ==================== */
+.hero {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 40px;
+    align-items: center;
+    background: var(--cor-branca);
+    padding: 40px;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra);
+    border-top: 5px solid var(--cor-oceano);
+}
+
+.tag-projeto {
+    display: inline-block;
+    background-color: var(--cor-farol-claro);
+    color: #b45309;
+    padding: 6px 14px;
+    border-radius: 99px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-text h2 {
+    font-size: 2.1rem;
+    line-height: 1.25;
+    margin-bottom: 18px;
+    color: var(--cor-marinho);
+}
+
+.hero-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--cor-texto-suave);
+    margin-bottom: 22px;
+}
+
+/* Destaque da Sigla F.A.R.O.L. */
+.sigla-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+}
+
+.sigla-item {
+    background-color: #f8fafc;
+    border: 1px solid var(--cor-borda);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: var(--cor-texto);
+}
+
+.sigla-item strong {
+    color: var(--cor-primaria);
+    font-size: 1rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn-primario {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primario:hover {
+    background-color: var(--cor-oceano);
+}
+
+.btn-secundario {
+    background-color: #f8fafc;
+    color: var(--cor-marinho);
+    border: 1px solid var(--cor-borda);
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.hero-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.info-card {
+    background-color: #f8fafc;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid var(--cor-farol);
+}
+
+.info-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+    color: var(--cor-marinho);
+}
+
+.info-card p {
+    font-size: 0.88rem;
+    color: var(--cor-texto-suave);
+    line-height: 1.45;
+}
+
+/* ==================== TELA 2: CHAT DO ESTUDANTE ==================== */
+.chat-wrapper {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 25px;
+    height: 620px;
+}
+
+.chat-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.security-box, .mood-box, .dica-apresentacao {
+    background: var(--cor-branca);
+    padding: 18px;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra);
+}
+
+.security-box h3, .mood-box h3 {
+    font-size: 0.98rem;
+    margin-bottom: 12px;
+    color: var(--cor-marinho);
+}
+
+.security-list {
+    list-style: none;
+    font-size: 0.86rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.security-list li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed var(--cor-borda);
+    padding-bottom: 5px;
+}
+
+.status-online {
+    color: var(--cor-sucesso);
+}
+
+.small-text {
+    font-size: 0.8rem;
+    color: var(--cor-texto-suave);
+    margin-bottom: 10px;
+}
+
+.mood-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mood-buttons button {
+    padding: 10px 12px;
+    border: 1px solid var(--cor-borda);
+    background: #f8fafc;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--cor-texto);
+    transition: all 0.2s;
+}
+
+.mood-buttons button:hover {
+    background: #e0f2fe;
+    border-color: var(--cor-primaria);
+}
+
+.dica-apresentacao {
+    background-color: var(--cor-farol-claro);
+    border: 1px solid #fde68a;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #92400e;
+}
+
+.chat-container {
+    background: var(--cor-branca);
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-header {
+    padding: 18px 24px;
+    background: var(--cor-resguardo);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-status {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+.btn-limpar {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #f8fafc;
+}
+
+.mensagem {
+    max-width: 75%;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 0.94rem;
+    line-height: 1.45;
+}
+
+.mensagem.sistema {
+    align-self: flex-start;
+    background-color: var(--cor-branca);
+    border: 1px solid var(--cor-borda);
+    border-left: 4px solid var(--cor-resguardo);
+    border-bottom-left-radius: 2px;
+}
+
+.mensagem.usuario {
+    align-self: flex-end;
+    background-color: var(--cor-oceano);
+    color: white;
+    border-bottom-right-radius: 2px;
+}
+
+.msg-hora {
+    display: block;
+    font-size: 0.7rem;
+    margin-top: 6px;
+    opacity: 0.7;
+    text-align: right;
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 15px;
+    background: var(--cor-branca);
+    border-top: 1px solid var(--cor-borda);
+    gap: 10px;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.chat-input-area input:focus {
+    border-color: var(--cor-primaria);
+}
+
+.btn-enviar {
+    background-color: var(--cor-marinho);
+    color: var(--cor-farol);
+    border: none;
+    padding: 0 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ==================== TELA 3: TORRE DE MONITORAMENTO ==================== */
+.painel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.selo-lgpd {
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.88rem;
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.kpi-card {
+    background: var(--cor-branca);
+    padding: 24px;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    border-bottom: 4px solid var(--cor-marinho);
+}
+
+.kpi-titulo {
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+    font-weight: 600;
+}
+
+.kpi-valor {
+    font-size: 2.4rem;
+    margin: 8px 0;
+}
+
+.texto-aviso { color: var(--cor-farol); }
+.texto-perigo { color: var(--cor-perigo); }
+
+.kpi-desc {
+    font-size: 0.8rem;
+    color: var(--cor-texto-suave);
+}
+
+.tabela-container {
+    background: var(--cor-branca);
+    padding: 25px;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra);
+}
+
+.tabela-container h3 {
+    margin-bottom: 18px;
+    color: var(--cor-marinho);
+}
+
+.tabela-alertas {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela-alertas th, .tabela-alertas td {
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--cor-borda);
+    font-size: 0.88rem;
+}
+
+.tabela-alertas th {
+    background-color: #f8fafc;
+    color: var(--cor-texto-suave);
+    font-weight: 700;
+}
+
+.tag-risco {
+    padding: 5px 12px;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.tag-risco.moderado {
+    background-color: var(--cor-farol-claro);
+    color: #b45309;
+}
+
+.tag-risco.severo {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+/* ==================== RODAPÉ E RESPONSIVIDADE ==================== */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--cor-marinho);
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+    .hero, .chat-wrapper, .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+    .chat-wrapper {
+        height: auto;
+    }
+    .chat-container {
+        height: 500px;
+    }
+}

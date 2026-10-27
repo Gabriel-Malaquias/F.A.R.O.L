@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F.A.R.O.L. | Ferramenta de Acolhimento, Resguardo e Orientação Livre</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonte Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Cabeçalho e Barra de Navegação -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-badge">🚨</div>
+                <div>
+                    <h1>F.A.R.O.L.</h1>
+                    <span class="subtitle">Ferramenta de Acolhimento, Resguardo e Orientação Livre</span>
+                </div>
+            </div>
+
+            <nav class="nav-links">
+                <button class="nav-btn active" onclick="trocarTela('inicio')" id="btn-inicio">
+                    ⚓ O Projeto
+                </button>
+                <button class="nav-btn" onclick="trocarTela('estudante')" id="btn-estudante">
+                    💬 Porto Seguro (Chat)
+                </button>
+                <button class="nav-btn" onclick="trocarTela('gestor')" id="btn-gestor">
+                    📡 Torre de Monitoramento
+                    <span class="badge-alerta" id="contador-alertas">2</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+
+        <!-- ==================== TELA 1: APRESENTAÇÃO (LANDING PAGE) ==================== -->
+        <section id="tela-inicio" class="tela ativa">
+            <div class="hero">
+                <div class="hero-text">
+                    <span class="tag-projeto">Mundo SENAI • Técnico em Desenvolvimento de Sistemas (1º Ano)</span>
+                    <h2>Uma luz segura para quem enfrenta a tempestade em silêncio.</h2>
+                    <p>
+                        O <strong>Projeto F.A.R.O.L.</strong> nasce para quebrar o isolamento silencioso no ambiente escolar. 
+                        A nossa plataforma oferece uma escuta acolhedora com <strong>criptografia de ponta a ponta</strong>, 
+                        guiando estudantes em vulnerabilidade emocional enquanto emite sinais preventivos para a rede de proteção.
+                    </p>
+
+                    <!-- Significado da Sigla em Destaque para a Banca -->
+                    <div class="sigla-grid">
+                        <div class="sigla-item"><strong>F</strong>erramenta de</div>
+                        <div class="sigla-item"><strong>A</strong>colhimento,</div>
+                        <div class="sigla-item"><strong>R</strong>esguardo e</div>
+                        <div class="sigla-item"><strong>O</strong>rientação</div>
+                        <div class="sigla-item"><strong>L</strong>ivre</div>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <button class="btn-primario" onclick="trocarTela('estudante')">
+                            Acessar Porto Seguro (Chat Anônimo)
+                        </button>
+                        <button class="btn-secundario" onclick="trocarTela('gestor')">
+                            Abrir Torre de Monitoramento
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-cards">
+                    <div class="info-card">
+                        <h3>🔒 Resguardo Absoluto (E2EE)</h3>
+                        <p>Arquitetura com criptografia de ponta a ponta e anonimização de histórico. O estudante expressa-se sem medo de estigmas ou exposição.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🧠 Radar Semântico Automatizado</h3>
+                        <p>Motor inteligente que analisa padrões de linguagem no chat para identificar sinais de ansiedade, depressão ou risco severo em tempo real.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📡 Sinais Luminosos de Alerta</h3>
+                        <p>Painel institucional que notifica a equipe pedagógica e o Conselho Tutelar através de alertas padronizados, preservando o sigilo do desabafo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TELA 2: PORTO SEGURO (CHAT DO ESTUDANTE) ==================== -->
+        <section id="tela-estudante" class="tela">
+            <div class="chat-wrapper">
+                <!-- Barra Lateral de Segurança do Estudante -->
+                <aside class="chat-sidebar">
+                    <div class="security-box">
+                        <h3>🛡️ Protocolo de Resguardo</h3>
+                        <ul class="security-list">
+                            <li><span>Conexão:</span> <strong class="status-online">● Criptografada</strong></li>
+                            <li><span>Hash da Sessão:</span> <strong id="id-sessao">#FRL-8492-X</strong></li>
+                            <li><span>Identidade:</span> <strong>100% Oculta</strong></li>
+                            <li><span>Histórico:</span> <strong>Auto-Destrutivo</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="mood-box">
+                        <h3>Simulador de Triagem (Teste Rápido)</h3>
+                        <p class="small-text">Clique abaixo para simular desabafos no estande do Mundo SENAI:</p>
+                        <div class="mood-buttons">
+                            <button onclick="enviarAtalho('Estou a sentir uma pressão enorme com as aulas, muita ansiedade e medo de falhar.')">
+                                🟡 Simular Sinais de Ansiedade (Moderado)
+                            </button>
+                            <button onclick="enviarAtalho('Tenho andado muito triste, isolado de todos na escola e sem forças para continuar.')">
+                                🟡 Simular Isolamento Silencioso (Moderado)
+                            </button>
+                            <button onclick="enviarAtalho('Estou em desespero total, sinto que não aguento mais viver assim e preciso de socorro.')">
+                                🔴 Simular Risco Agudo (Alerta Severo)
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="dica-apresentacao">
+                        <strong>💡 Roteiro Mundo SENAI:</strong>
+                        <p>Após enviar uma mensagem acima, clique na aba <em>"Torre de Monitoramento"</em> no topo da página para mostrar ao visitante o sinal emitido pelo F.A.R.O.L.!</p>
+                    </div>
+                </aside>
+
+                <!-- Área Principal do Chat -->
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <div>
+                            <h3>Canal de Escuta F.A.R.O.L.</h3>
+                            <span class="chat-status">Orientação Livre de Julgamentos • Proteção Socioemocional</span>
+                        </div>
+                        <button class="btn-limpar" onclick="reiniciarChat()">🔄 Gerar Novo Hash</button>
+                    </div>
+
+                    <div class="chat-messages" id="chat-messages">
+                        <!-- Mensagem Inicial do Sistema -->
+                        <div class="mensagem sistema">
+                            <div class="msg-conteudo">
+                                Bem-vindo(a) ao <strong>F.A.R.O.L.</strong> Este é o seu Porto Seguro. Ninguém na escola tem acesso ao seu nome ou ao texto que escrever aqui. O que está a pesar no seu coração hoje?
+                            </div>
+                            <span class="msg-hora">Agora</span>
+                        </div>
+                    </div>
+
+                    <form class="chat-input-area" onsubmit="enviarMensagem(event)">
+                        <input 
+                            type="text" 
+                            id="input-mensagem" 
+                            placeholder="Escreva livremente aqui... O seu desabafo está protegido por criptografia." 
+                            autocomplete="off"
+                            required
+                        >
+                        <button type="submit" class="btn-enviar">Enviar Sinal ➤</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TELA 3: TORRE DE MONITORAMENTO (PAINEL GESTOR) ==================== -->
+        <section id="tela-gestor" class="tela">
+            <div class="painel-header">
+                <div>
+                    <h2>📡 Torre de Monitoramento Institucional — F.A.R.O.L.</h2>
+                    <p>Recebimento exclusivo de <strong>Sinais de Alerta Padronizados</strong> para gestão escolar e Conselho Tutelar (Sem quebra de sigilo das conversas).</p>
+                </div>
+                <div class="selo-lgpd">
+                    🔒 Criptografia E2EE & Anonimização Ativa
+                </div>
+            </div>
+
+            <!-- Indicadores Resumo (KPIs) -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <span class="kpi-titulo">Acolhimentos no Porto Seguro</span>
+                    <strong class="kpi-valor" id="kpi-sessoes">18</strong>
+                    <span class="kpi-desc">Sessões anónimas realizadas hoje</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-titulo">Sinal Âmbar (Atenção Pedagógica)</span>
+                    <strong class="kpi-valor texto-aviso" id="kpi-moderados">1</strong>
+                    <span class="kpi-desc">Padrões de ansiedade ou isolamento</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-titulo">Sinal Vermelho (Risco Severo)</span>
+                    <strong class="kpi-valor texto-perigo" id="kpi-severos">1</strong>
+                    <span class="kpi-desc">Intervenção Imediata / Conselho Tutelar</span>
+                </div>
+            </div>
+
+            <!-- Tabela de Sinais de Alerta -->
+            <div class="tabela-container">
+                <h3>Registos Emitidos pelo Motor de Análise Semântica</h3>
+                <table class="tabela-alertas">
+                    <thead>
+                        <tr>
+                            <th>Código do Sinal / Hora</th>
+                            <th>Origem Estimada</th>
+                            <th>Padrão Semântico Identificado</th>
+                            <th>Sinal do Farol</th>
+                            <th>Protocolo Institucional Recomendado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-alertas">
+                        <!-- Alertas pré-carregados para demonstração -->
+                        <tr>
+                            <td><strong>#SINAL-401</strong><br><small>Hoje, 08:30</small></td>
+                            <td>Ensino Médio (1º Ano)</td>
+                            <td>Indicadores semânticos de sobrecarga acadêmica e isolamento silencioso</td>
+                            <td><span class="tag-risco moderado">🟡 Sinal Âmbar (Moderado)</span></td>
+                            <td>Acompanhamento Pedagógico Preventivo / Escuta Ativa</td>
+                        </tr>
+                        <tr>
+                            <td><strong>#SINAL-402</strong><br><small>Hoje, 09:45</small></td>
+                            <td>Curso Técnico</td>
+                            <td>Padrão crítico de vulnerabilidade e angústia severa detectado</td>
+                            <td><span class="tag-risco severo">🔴 Sinal Vermelho (Severo)</span></td>
+                            <td><strong>Acionar Psicologia Escolar + Intervenção do Conselho Tutelar</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p><strong>Projeto F.A.R.O.L.</strong> (Ferramenta de Acolhimento, Resguardo e Orientação Livre) • Apresentação Oficial <strong>Mundo SENAI</strong> • Técnico em Desenvolvimento de Sistemas</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
